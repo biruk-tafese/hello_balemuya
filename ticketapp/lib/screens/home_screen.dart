@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,11 +12,10 @@ class HomeScreen extends StatefulWidget {
 class _MyWidgetState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFFE5E5E5),
-      body: Center(
-        child: Text("Selam Bus Transport System"),
-      ),
-    );
+    return Scaffold(
+        backgroundColor: const Color(0xFFE5E5E5),
+        body: ListView(
+          children: [Container()],
+        ));
   }
 }

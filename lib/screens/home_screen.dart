@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hello_balemuya/home_page.dart';
+import 'package:hello_balemuya/navigations/search_category.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,9 +13,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
-  final List<String> _tabTexts = [
-    'Home Page',
-    'Search Page',
+  final List<dynamic> _tabTexts = [
+    const HomePage(), // Instantiate the HomePage widget directly here
+    const SearchCategory(),
     'Favorites Page',
     'Settings Page',
   ];
@@ -44,17 +46,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Welcome'),
+        title: const Text('Hello balemuya'),
       ),
       body: Center(
-        child: Text(
-          _tabTexts[
-              _currentIndex], // Display the text based on the selected tab
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        child: _tabTexts[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
